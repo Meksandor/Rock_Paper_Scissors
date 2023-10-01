@@ -2,7 +2,16 @@ var Rock;
 var Paper;
 var Scissors;
 var playerSelectionAnyWord = prompt("Choose your weapon! :", "")
-var playerSelection
+var playerSelection = capitalize(playerSelectionAnyWord);
+
+function capitalize(word) {
+    var word
+    var word2 = word.toLowerCase();
+    var firstChar = word2.charAt(0);
+    var firstCharUpper = firstChar.toUpperCase();
+    var firstCharUpperReplace = word2.replace(firstChar, firstCharUpper);
+    return firstCharUpperReplace;
+}
 
 
 
