@@ -1,8 +1,10 @@
-var Rock;
-var Paper;
-var Scissors;
-var playerSelectionAnyWord = prompt("Choose your weapon! :", "")
-var playerSelection = capitalize(playerSelectionAnyWord);
+const computerSelection = getComputerChoice();
+
+const playerSelectionAnyWord = prompt("Choose your weapon! :", "");
+const playerSelection = capitalize(playerSelectionAnyWord);
+
+//Normally we will use return in this game project but for now to see result we are better off printing the results on the console.
+console.log(playRound(playerSelection, computerSelection));
 
 function capitalize(word) {
     var word
@@ -13,28 +15,24 @@ function capitalize(word) {
     return firstCharUpperReplace;
 }
 
-
-
-function getComputerChoice(computerSelection) {
-
+function getComputerChoice() {
+    var randomNumber = Math.floor(Math.random() * 100);
+    if (randomNumber <= 33) {
+        return "Rock";
+    }
+    else if (33 < randomNumber && randomNumber <= 66) {
+        return "Paper";
+    }
+    else if (66 < randomNumber && randomNumber <= 100) {
+        return "Scissors";
+    }
 }
 
 function playRound(playerSelection, computerSelection) {
-    switch (playerSelection, computerSelection) {
-        case (playerSelection === "Rock" && computerSelection === "Paper"):
-            console.log("You lost! Paper beats Rock");
-        case (playerSelection === "Rock" && computerSelection === "Scissors"):
-            console.log("You win! Rock beats Scissors");
-        case (playerSelection === "Paper" && computerSelection === "Scissors"):
-            console.log("You lost! Scissors beats Paper");
-        case (playerSelection === "Paper" && computerSelection === "Rock"):
-            console.log("You win! Paper beats Rock");
-        case (playerSelection === "Scissors" && computerSelection === "Rock"):
-            console.log("You lost! Rock beats Scissors");
-        case (playerSelection === "Scissors" && computerSelection === "Paper"):
-            console.log("You win! Scissors beats Paper");
-    }
+    
 }
+
+
 
 function game() {
 
