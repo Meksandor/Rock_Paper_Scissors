@@ -1,17 +1,9 @@
 var yourScore = 0;
 var computerScore = 0;
 
-const computerSelection = getComputerChoice();
-const playerSelection = capitalize(prompt("Choose your weapon! :", ""));
-
-
-//Normally we will use return in this game project but for now to see result we are better off printing the results on the console.
-console.log(playRound(playerSelection, computerSelection));
-
-//console.log(game());
+var playerSelection; // Moved this declaration to the top
 
 function capitalize(word) {
-    var word
     var word2 = word.toLowerCase();
     var firstChar = word2.charAt(0);
     var firstCharUpper = firstChar.toUpperCase();
@@ -23,16 +15,18 @@ function getComputerChoice() {
     var randomNumber = Math.floor(Math.random() * 100);
     if (randomNumber <= 33) {
         return "Rock";
-    }
-    else if (33 < randomNumber && randomNumber <= 66) {
+    } else if (33 < randomNumber && randomNumber <= 66) {
         return "Paper";
-    }
-    else if (66 < randomNumber && randomNumber <= 100) {
+    } else if (66 < randomNumber && randomNumber <= 100) {
         return "Scissors";
     }
 }
 
 function playRound() {
+    playerSelection = capitalize(prompt("Choose your weapon! :", ""));
+
+    var computerSelection = getComputerChoice(); // Moved this line here
+
     if (playerSelection === "Rock" && computerSelection === "Paper") {
         console.log("Computer selection is :" + " " + computerSelection);
         console.log("You lost! Paper beats Rock");
@@ -63,8 +57,25 @@ function playRound() {
         console.log("You win! Scissors beats Paper");
         yourScore = yourScore + 1;
     }
+    // (rest of your playRound cases...)
+
+    // Removed return statements as they are not needed here
 }
 
 function game() {
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
 
+    if (yourScore < computerScore) {
+        console.log("You lost the game Computer wins low diff ");
+    } else if (computerScore < yourScore) {
+        console.log("You win the game CONGRATULATION high  🤙🏻 ");
+    }
+
+    console.log("Game Over");
 }
+
+console.log(game()); // Call the game function to start the game
