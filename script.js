@@ -1,10 +1,13 @@
-const computerSelection = getComputerChoice();
 
-const playerSelectionAnyWord = prompt("Choose your weapon! :", "");
-const playerSelection = capitalize(playerSelectionAnyWord);
+
+const computerSelection = getComputerChoice();
+const playerSelection = capitalize(prompt("Choose your weapon! :", ""));
+
 
 //Normally we will use return in this game project but for now to see result we are better off printing the results on the console.
 console.log(playRound(playerSelection, computerSelection));
+
+//console.log(game());
 
 function capitalize(word) {
     var word
