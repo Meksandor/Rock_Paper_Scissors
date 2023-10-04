@@ -57,9 +57,6 @@ function playRound() {
         console.log("You win! Scissors beats Paper");
         yourScore = yourScore + 1;
     }
-    // (rest of your playRound cases...)
-
-    // Removed return statements as they are not needed here
 }
 
 function game() {
@@ -69,13 +66,15 @@ function game() {
     playRound();
     playRound();
 
-    if (yourScore < computerScore) {
-        console.log("You lost the game Computer wins low diff ");
-    } else if (computerScore < yourScore) {
-        console.log("You win the game CONGRATULATION high  🤙🏻 ");
-    }
-
     console.log("Game Over");
+    console.log("Your Score:" + " " + yourScore);
+    console.log("Computer Score:" + " " + computerScore);
+
+    if (yourScore < computerScore) {
+        console.log("You lost the game, Computer wins low diff");
+    } else if (computerScore < yourScore) {
+        console.log("You win the game, CONGRATULATION high diff 🤙🏻");
+    }
 }
 
 console.log(game()); // Call the game function to start the game
