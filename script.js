@@ -57,6 +57,18 @@ function playRound() {
         console.log("You win! Scissors beats Paper");
         yourScore = yourScore + 1;
     }
+    else if (playerSelection === "Rock" && computerSelection === "Rock") {
+        console.log("Computer selection is :" + " " + computerSelection);
+        console.log("It's a tie, no one gets score");
+    }
+    else if (playerSelection === "Paper" && computerSelection === "Paper") {
+        console.log("Computer selection is :" + " " + computerSelection);
+        console.log("It's a tie, no one gets score");
+    }
+    else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
+        console.log("Computer selection is :" + " " + computerSelection);
+        console.log("It's a tie, no one gets score");
+    }
 }
 
 function game() {
@@ -72,8 +84,12 @@ function game() {
 
     if (yourScore < computerScore) {
         console.log("You lost the game, Computer wins low diff");
-    } else if (computerScore < yourScore) {
+    }
+    else if (computerScore < yourScore) {
         console.log("You win the game, CONGRATULATION high diff 🤙🏻");
+    }
+    else if (computerScore == yourScore) {
+        console.log("You both got the same score, DRAW 🫱🏻‍🫲🏾");
     }
 }
 
