@@ -45,7 +45,7 @@ function getComputerChoice() {
 
 function playRound() {
 
-    var computerSelection = getComputerChoice(); // Moved this line here
+    var computerSelection = getComputerChoice();
     var resultsShowcase = document.querySelector('#resultDiv');
 
     if (playerSelection === "Rock" && computerSelection === "Paper") {
@@ -192,7 +192,6 @@ function playRound() {
     }
 
 }
-
 
 function game() {
     var gameOverResultShowcase = document.querySelector('#gameOverResult')
