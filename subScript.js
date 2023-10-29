@@ -1,8 +1,29 @@
 var yourScore = 0;
 var computerScore = 0;
+var playerSelection = '';
+var threeButtons = document.querySelectorAll('.gameButton');
 
-var playerSelection; // Moved this declaration to the top
 
+threeButtons.forEach(function (button) {
+    button.addEventListener('click', function (event) {
+        // Your event handler code here
+        var targetButton = event.target; // Get the clicked button
+        switch (targetButton.id) {
+            case 'Rock':
+                playerSelection = "Rock";
+                break;
+            case 'Paper':
+                playerSelection = "Paper";
+                break;
+            case 'Scissors':
+                playerSelection = "Scissors";
+                break;
+        }
+        console.log(playRound());
+    });
+});
+
+/*
 function capitalize(word) {
     var word2 = word.toLowerCase();
     var firstChar = word2.charAt(0);
@@ -10,6 +31,7 @@ function capitalize(word) {
     var firstCharUpperReplace = word2.replace(firstChar, firstCharUpper);
     return firstCharUpperReplace;
 }
+*/
 
 function getComputerChoice() {
     var randomNumber = Math.floor(Math.random() * 100);
@@ -23,7 +45,6 @@ function getComputerChoice() {
 }
 
 function playRound() {
-    playerSelection = capitalize(prompt("Choose your weapon! :", ""));
 
     var computerSelection = getComputerChoice(); // Moved this line here
 
@@ -57,25 +78,42 @@ function playRound() {
         console.log("You win! Scissors beats Paper");
         yourScore = yourScore + 1;
     }
-    // (rest of your playRound cases...)
-
-    // Removed return statements as they are not needed here
+    else if (playerSelection === "Rock" && computerSelection === "Rock") {
+        console.log("Computer selection is :" + " " + computerSelection);
+        console.log("It's a tie, no one gets score");
+    }
+    else if (playerSelection === "Paper" && computerSelection === "Paper") {
+        console.log("Computer selection is :" + " " + computerSelection);
+        console.log("It's a tie, no one gets score");
+    }
+    else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
+        console.log("Computer selection is :" + " " + computerSelection);
+        console.log("It's a tie, no one gets score");
+    }
 }
 
+/*
 function game() {
     playRound();
     playRound();
     playRound();
     playRound();
     playRound();
-
-    if (yourScore < computerScore) {
-        console.log("You lost the game Computer wins low diff ");
-    } else if (computerScore < yourScore) {
-        console.log("You win the game CONGRATULATION high  🤙🏻 ");
-    }
-
+ 
     console.log("Game Over");
+    console.log("Your Score:" + " " + yourScore);
+    console.log("Computer Score:" + " " + computerScore);
+ 
+    if (yourScore < computerScore) {
+        console.log("You lost the game, Computer wins low diff");
+    }
+    else if (computerScore < yourScore) {
+        console.log("You win the game, CONGRATULATION high diff 🤙🏻");
+    }
+    else if (computerScore == yourScore) {
+        console.log("You both got the same score, DRAW 🫱🏻‍🫲🏾");
+    }
 }
+*/
 
-console.log(game()); // Call the game function to start the game
+playRound() // Call the game function to start the game.

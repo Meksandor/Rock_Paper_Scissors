@@ -1,8 +1,28 @@
 var yourScore = 0;
 var computerScore = 0;
+var playerSelection = '';
+var threeButtons = document.querySelectorAll('.gameButton');
 
-var playerSelection; // Moved this declaration to the top
+function playRoundByButtonSelection(button) {
+    button.addEventListener('click', function (event) {
+        var targetButton = event.target;
+        switch (targetButton.id) {
+            case 'Rock':
+                playerSelection = "Rock";
+                break;
+            case 'Paper':
+                playerSelection = "Paper";
+                break;
+            case 'Scissors':
+                playerSelection = "Scissors";
+                break;
+        }
+        console.log(playRound());
+    });
+}
+threeButtons.forEach(playRoundByButtonSelection);
 
+/*
 function capitalize(word) {
     var word2 = word.toLowerCase();
     var firstChar = word2.charAt(0);
@@ -10,6 +30,7 @@ function capitalize(word) {
     var firstCharUpperReplace = word2.replace(firstChar, firstCharUpper);
     return firstCharUpperReplace;
 }
+*/
 
 function getComputerChoice() {
     var randomNumber = Math.floor(Math.random() * 100);
@@ -23,7 +44,6 @@ function getComputerChoice() {
 }
 
 function playRound() {
-    playerSelection = capitalize(prompt("Choose your weapon! :", ""));
 
     var computerSelection = getComputerChoice(); // Moved this line here
 
@@ -69,14 +89,25 @@ function playRound() {
         console.log("Computer selection is :" + " " + computerSelection);
         console.log("It's a tie, no one gets score");
     }
+
 }
 
+
 function game() {
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-    playRound();
+    if (yourScore !== 5 || computerScore !== 5) {
+        return;
+    }
+    else if (yourScore < computerScore) {
+        console.log("You lost the game, Computer wins low diff");
+
+    }
+    else if (computerScore < yourScore) {
+        console.log("You win the game, CONGRATULATION high diff 🤙🏻");
+    }
+    else if (computerScore == yourScore) {
+        console.log("You both got the same score, DRAW 🫱🏻‍🫲🏾");
+    }
+
 
     console.log("Game Over");
     console.log("Your Score:" + " " + yourScore);
@@ -93,4 +124,5 @@ function game() {
     }
 }
 
-console.log(game()); // Call the game function to start the game
+
+playRound() // Call the game function to start the game.
