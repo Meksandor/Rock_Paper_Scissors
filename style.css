@@ -1,3 +1,19 @@
 .body {
     background: black;
 }
+
+#buttonsDiv {
+    display: flex;
+    justify-content: center;
+}
+
+#resultDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameOverResult {
+    display: flex;
+    justify-content: center;
+}

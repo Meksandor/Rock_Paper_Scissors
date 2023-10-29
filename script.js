@@ -75,9 +75,9 @@ function playRound() {
         aRoundResultContainer2.appendChild(whoBeatsPara2);
         resultsShowcase.appendChild(aRoundResultContainer2);
 
-        yourSelecPara.textContent = "You choose :" + " " + playerSelection;
-        computerSelecPara.textContent = "Computer selection is :" + " " + computerSelection;
-        whoBeatsPara.textContent = "You win! Rock beats Scissors"
+        yourSelecPara2.textContent = "You choose :" + " " + playerSelection;
+        computerSelecPara2.textContent = "Computer selection is :" + " " + computerSelection;
+        whoBeatsPara2.textContent = "You win! Rock beats Scissors"
         yourScore = yourScore + 1;
     }
     else if (playerSelection === "Paper" && computerSelection === "Scissors") {
@@ -91,9 +91,9 @@ function playRound() {
         aRoundResultContainer3.appendChild(whoBeatsPara3);
         resultsShowcase.appendChild(aRoundResultContainer3);
 
-        yourSelecPara.textContent = "You choose :" + " " + playerSelection;
-        computerSelecPara.textContent = "Computer selection is :" + " " + computerSelection;
-        whoBeatsPara.textContent = "You lost! Scissors beats Paper"
+        yourSelecPara3.textContent = "You choose :" + " " + playerSelection;
+        computerSelecPara3.textContent = "Computer selection is :" + " " + computerSelection;
+        whoBeatsPara3.textContent = "You lost! Scissors beats Paper"
         computerScore = computerScore + 1;
     }
     else if (playerSelection === "Paper" && computerSelection === "Rock") {
@@ -107,9 +107,9 @@ function playRound() {
         aRoundResultContainer4.appendChild(whoBeatsPara4);
         resultsShowcase.appendChild(aRoundResultContainer4);
 
-        yourSelecPara.textContent = "You choose :" + " " + playerSelection;
-        computerSelecPara.textContent = "Computer selection is :" + " " + computerSelection;
-        whoBeatsPara.textContent = "You win! Paper beats Rock"
+        yourSelecPara4.textContent = "You choose :" + " " + playerSelection;
+        computerSelecPara4.textContent = "Computer selection is :" + " " + computerSelection;
+        whoBeatsPara4.textContent = "You win! Paper beats Rock"
         yourScore = yourScore + 1;
     }
     else if (playerSelection === "Scissors" && computerSelection === "Rock") {
@@ -151,31 +151,16 @@ function playRound() {
         var computerSelecPara7 = document.createElement('p');
         var whoBeatsPara7 = document.createElement('p');
 
-        aRoundResultContainer6.appendChild(yourSelecPara6);
-        aRoundResultContainer6.appendChild(computerSelecPara6);
-        aRoundResultContainer6.appendChild(whoBeatsPara6);
-        resultsShowcase.appendChild(aRoundResultContainer6);
-
-        yourSelecPara.textContent = "You choose :" + " " + playerSelection;
-        computerSelecPara.textContent = "Computer selection is :" + " " + computerSelection;
-        whoBeatsPara.textContent = "It's a tie, no one gets score"
-    }
-    else if (playerSelection === "Paper" && computerSelection === "Paper") {
-        var aRoundResultContainer7 = document.createElement('div');
-        var yourSelecPara7 = document.createElement('p');
-        var computerSelecPara7 = document.createElement('p');
-        var whoBeatsPara7 = document.createElement('p');
-
         aRoundResultContainer7.appendChild(yourSelecPara7);
         aRoundResultContainer7.appendChild(computerSelecPara7);
         aRoundResultContainer7.appendChild(whoBeatsPara7);
         resultsShowcase.appendChild(aRoundResultContainer7);
 
-        yourSelecPara.textContent = "You choose :" + " " + playerSelection;
-        computerSelecPara.textContent = "Computer selection is :" + " " + computerSelection;
-        whoBeatsPara.textContent = "It's a tie, no one gets score"
+        yourSelecPara7.textContent = "You choose :" + " " + playerSelection;
+        computerSelecPara7.textContent = "Computer selection is :" + " " + computerSelection;
+        whoBeatsPara7.textContent = "It's a tie, no one gets score"
     }
-    else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
+    else if (playerSelection === "Paper" && computerSelection === "Paper") {
         var aRoundResultContainer8 = document.createElement('div');
         var yourSelecPara8 = document.createElement('p');
         var computerSelecPara8 = document.createElement('p');
@@ -189,6 +174,21 @@ function playRound() {
         yourSelecPara8.textContent = "You choose :" + " " + playerSelection;
         computerSelecPara8.textContent = "Computer selection is :" + " " + computerSelection;
         whoBeatsPara8.textContent = "It's a tie, no one gets score"
+    }
+    else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
+        var aRoundResultContainer9 = document.createElement('div');
+        var yourSelecPara9 = document.createElement('p');
+        var computerSelecPara9 = document.createElement('p');
+        var whoBeatsPara9 = document.createElement('p');
+
+        aRoundResultContainer9.appendChild(yourSelecPara9);
+        aRoundResultContainer9.appendChild(computerSelecPara9);
+        aRoundResultContainer9.appendChild(whoBeatsPara9);
+        resultsShowcase.appendChild(aRoundResultContainer9);
+
+        yourSelecPara9.textContent = "You choose :" + " " + playerSelection;
+        computerSelecPara9.textContent = "Computer selection is :" + " " + computerSelection;
+        whoBeatsPara9.textContent = "It's a tie, no one gets score"
     }
 
 }
