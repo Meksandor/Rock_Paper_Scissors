@@ -46,48 +46,149 @@ function getComputerChoice() {
 function playRound() {
 
     var computerSelection = getComputerChoice(); // Moved this line here
+    var resultsShowcase = document.querySelector('#resultDiv');
 
     if (playerSelection === "Rock" && computerSelection === "Paper") {
-        console.log("Computer selection is :" + " " + computerSelection);
-        console.log("You lost! Paper beats Rock");
+        var aRoundResultContainer = document.createElement('div');
+        var yourSelecPara = document.createElement('p');
+        var computerSelecPara = document.createElement('p');
+        var whoBeatsPara = document.createElement('p');
+
+        aRoundResultContainer.appendChild(yourSelecPara);
+        aRoundResultContainer.appendChild(computerSelecPara);
+        aRoundResultContainer.appendChild(whoBeatsPara);
+        resultsShowcase.appendChild(aRoundResultContainer);
+
+        yourSelecPara.textContent = "You choose :" + " " + playerSelection;
+        computerSelecPara.textContent = "Computer selection is :" + " " + computerSelection;
+        whoBeatsPara.textContent = "You lost! Paper beats Rock"
         computerScore = computerScore + 1;
     }
     else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        console.log("Computer selection is :" + " " + computerSelection);
-        console.log("You win! Rock beats Scissors");
+        var aRoundResultContainer2 = document.createElement('div');
+        var yourSelecPara2 = document.createElement('p');
+        var computerSelecPara2 = document.createElement('p');
+        var whoBeatsPara2 = document.createElement('p');
+
+        aRoundResultContainer2.appendChild(yourSelecPara2);
+        aRoundResultContainer2.appendChild(computerSelecPara2);
+        aRoundResultContainer2.appendChild(whoBeatsPara2);
+        resultsShowcase.appendChild(aRoundResultContainer2);
+
+        yourSelecPara.textContent = "You choose :" + " " + playerSelection;
+        computerSelecPara.textContent = "Computer selection is :" + " " + computerSelection;
+        whoBeatsPara.textContent = "You win! Rock beats Scissors"
         yourScore = yourScore + 1;
     }
     else if (playerSelection === "Paper" && computerSelection === "Scissors") {
-        console.log("Computer selection is :" + " " + computerSelection);
-        console.log("You lost! Scissors beats Paper");
+        var aRoundResultContainer3 = document.createElement('div');
+        var yourSelecPara3 = document.createElement('p');
+        var computerSelecPara3 = document.createElement('p');
+        var whoBeatsPara3 = document.createElement('p');
+
+        aRoundResultContainer3.appendChild(yourSelecPara3);
+        aRoundResultContainer3.appendChild(computerSelecPara3);
+        aRoundResultContainer3.appendChild(whoBeatsPara3);
+        resultsShowcase.appendChild(aRoundResultContainer3);
+
+        yourSelecPara.textContent = "You choose :" + " " + playerSelection;
+        computerSelecPara.textContent = "Computer selection is :" + " " + computerSelection;
+        whoBeatsPara.textContent = "You lost! Scissors beats Paper"
         computerScore = computerScore + 1;
     }
     else if (playerSelection === "Paper" && computerSelection === "Rock") {
-        console.log("Computer selection is :" + " " + computerSelection);
-        console.log("You win! Paper beats Rock");
+        var aRoundResultContainer4 = document.createElement('div');
+        var yourSelecPara4 = document.createElement('p');
+        var computerSelecPara4 = document.createElement('p');
+        var whoBeatsPara4 = document.createElement('p');
+
+        aRoundResultContainer4.appendChild(yourSelecPara4);
+        aRoundResultContainer4.appendChild(computerSelecPara4);
+        aRoundResultContainer4.appendChild(whoBeatsPara4);
+        resultsShowcase.appendChild(aRoundResultContainer4);
+
+        yourSelecPara.textContent = "You choose :" + " " + playerSelection;
+        computerSelecPara.textContent = "Computer selection is :" + " " + computerSelection;
+        whoBeatsPara.textContent = "You win! Paper beats Rock"
         yourScore = yourScore + 1;
     }
     else if (playerSelection === "Scissors" && computerSelection === "Rock") {
-        console.log("Computer selection is :" + " " + computerSelection);
-        console.log("You lost! Rock beats Scissors");
+        var aRoundResultContainer5 = document.createElement('div');
+        var yourSelecPara5 = document.createElement('p');
+        var computerSelecPara5 = document.createElement('p');
+        var whoBeatsPara5 = document.createElement('p');
+
+        aRoundResultContainer5.appendChild(yourSelecPara5);
+        aRoundResultContainer5.appendChild(computerSelecPara5);
+        aRoundResultContainer5.appendChild(whoBeatsPara5);
+        resultsShowcase.appendChild(aRoundResultContainer5);
+
+        yourSelecPara5.textContent = "You choose :" + " " + playerSelection;
+        computerSelecPara5.textContent = "Computer selection is :" + " " + computerSelection;
+        whoBeatsPara5.textContent = "You lost! Rock beats Scissors"
+
         computerScore = computerScore + 1;
     }
     else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-        console.log("Computer selection is :" + " " + computerSelection);
-        console.log("You win! Scissors beats Paper");
+        var aRoundResultContainer6 = document.createElement('div');
+        var yourSelecPara6 = document.createElement('p');
+        var computerSelecPara6 = document.createElement('p');
+        var whoBeatsPara6 = document.createElement('p');
+
+        aRoundResultContainer6.appendChild(yourSelecPara6);
+        aRoundResultContainer6.appendChild(computerSelecPara6);
+        aRoundResultContainer6.appendChild(whoBeatsPara6);
+        resultsShowcase.appendChild(aRoundResultContainer6);
+
+        yourSelecPara6.textContent = "You choose :" + " " + playerSelection;
+        computerSelecPara6.textContent = "Computer selection is :" + " " + computerSelection;
+        whoBeatsPara6.textContent = "You win! Scissors beats Paper"
         yourScore = yourScore + 1;
     }
     else if (playerSelection === "Rock" && computerSelection === "Rock") {
-        console.log("Computer selection is :" + " " + computerSelection);
-        console.log("It's a tie, no one gets score");
+        var aRoundResultContainer7 = document.createElement('div');
+        var yourSelecPara7 = document.createElement('p');
+        var computerSelecPara7 = document.createElement('p');
+        var whoBeatsPara7 = document.createElement('p');
+
+        aRoundResultContainer6.appendChild(yourSelecPara6);
+        aRoundResultContainer6.appendChild(computerSelecPara6);
+        aRoundResultContainer6.appendChild(whoBeatsPara6);
+        resultsShowcase.appendChild(aRoundResultContainer6);
+
+        yourSelecPara.textContent = "You choose :" + " " + playerSelection;
+        computerSelecPara.textContent = "Computer selection is :" + " " + computerSelection;
+        whoBeatsPara.textContent = "It's a tie, no one gets score"
     }
     else if (playerSelection === "Paper" && computerSelection === "Paper") {
-        console.log("Computer selection is :" + " " + computerSelection);
-        console.log("It's a tie, no one gets score");
+        var aRoundResultContainer7 = document.createElement('div');
+        var yourSelecPara7 = document.createElement('p');
+        var computerSelecPara7 = document.createElement('p');
+        var whoBeatsPara7 = document.createElement('p');
+
+        aRoundResultContainer7.appendChild(yourSelecPara7);
+        aRoundResultContainer7.appendChild(computerSelecPara7);
+        aRoundResultContainer7.appendChild(whoBeatsPara7);
+        resultsShowcase.appendChild(aRoundResultContainer7);
+
+        yourSelecPara.textContent = "You choose :" + " " + playerSelection;
+        computerSelecPara.textContent = "Computer selection is :" + " " + computerSelection;
+        whoBeatsPara.textContent = "It's a tie, no one gets score"
     }
     else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
-        console.log("Computer selection is :" + " " + computerSelection);
-        console.log("It's a tie, no one gets score");
+        var aRoundResultContainer8 = document.createElement('div');
+        var yourSelecPara8 = document.createElement('p');
+        var computerSelecPara8 = document.createElement('p');
+        var whoBeatsPara8 = document.createElement('p');
+
+        aRoundResultContainer8.appendChild(yourSelecPara8);
+        aRoundResultContainer8.appendChild(computerSelecPara8);
+        aRoundResultContainer8.appendChild(whoBeatsPara8);
+        resultsShowcase.appendChild(aRoundResultContainer8);
+
+        yourSelecPara8.textContent = "You choose :" + " " + playerSelection;
+        computerSelecPara8.textContent = "Computer selection is :" + " " + computerSelection;
+        whoBeatsPara8.textContent = "It's a tie, no one gets score"
     }
 
 }
