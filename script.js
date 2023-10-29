@@ -195,14 +195,22 @@ function playRound() {
 
 
 function game() {
+    var gameOverResultShowcase = document.querySelector('#gameOverResult')
+
     if (computerScore == 5) {
-        console.log("You lost the game, Computer wins low diff");
+        var youLostPara = document.createElement('p')
+        youLostPara.textContent = "You lost the game, Computer wins low diff"
+        gameOverResultShowcase.appendChild(youLostPara);
+
         threeButtons.forEach(function (button) {
             button.setAttribute("disabled", "");
         });
     }
     else if (yourScore == 5) {
-        console.log("You win the game, CONGRATULATION high diff 🤙🏻");
+        var youWinPara = document.createElement('p')
+        youWinPara.textContent = "You win the game, CONGRATULATION high diff 🤙🏻"
+        gameOverResultShowcase.appendChild(youWinPara);
+
         threeButtons.forEach(function (button) {
             button.setAttribute("disabled", "");
         });
@@ -211,7 +219,15 @@ function game() {
         return playRound();
     }
 
-    console.log("Game Over");
-    console.log("Your Score:" + " " + yourScore);
-    console.log("Computer Score:" + " " + computerScore);
+    var gameConclusion = document.createElement('p');
+    var gameConclusion2 = document.createElement('p');
+    var gameConclusion3 = document.createElement('p');
+
+    gameConclusion.textContent = "Game Over";
+    gameConclusion2.textContent = "Your Score:" + " " + yourScore;
+    gameConclusion3.textContent = "Computer Score:" + " " + computerScore;
+
+    gameOverResultShowcase.appendChild(gameConclusion);
+    gameOverResultShowcase.appendChild(gameConclusion2);
+    gameOverResultShowcase.appendChild(gameConclusion3);
 }
