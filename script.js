@@ -94,15 +94,14 @@ function playRound() {
 
 
 function game() {
-    if (yourScore !== 5 || computerScore !== 5) {
-        return playRound();
-    }
-    else if (computerScore == 5) {
+    if (computerScore == 5) {
         console.log("You lost the game, Computer wins low diff");
-
     }
     else if (yourScore == 5) {
         console.log("You win the game, CONGRATULATION high diff 🤙🏻");
+    }
+    else if (yourScore !== 5 || computerScore !== 5) {
+        return playRound();
     }
 
     console.log("Game Over");
