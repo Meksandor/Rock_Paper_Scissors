@@ -114,6 +114,3 @@ function game() {
     console.log("Your Score:" + " " + yourScore);
     console.log("Computer Score:" + " " + computerScore);
 }
-
-
-playRound() // Call the game function to start the game.
