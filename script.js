@@ -47,6 +47,7 @@ function playRound() {
 
     var computerSelection = getComputerChoice();
     var resultsShowcase = document.querySelector('#resultDiv');
+    var scoreShowcase = document.querySelector('#scores');
 
     if (playerSelection === "Rock" && computerSelection === "Paper") {
         var aRoundResultContainer = document.createElement('div');
@@ -62,7 +63,9 @@ function playRound() {
         yourSelecPara.textContent = "You choose :" + " " + playerSelection;
         computerSelecPara.textContent = "Computer selection is :" + " " + computerSelection;
         whoBeatsPara.textContent = "You lost! Paper beats Rock"
+
         computerScore = computerScore + 1;
+        scoreShowcase.textContent = yourScore + "   " + "-" + "   " + computerScore;
     }
     else if (playerSelection === "Rock" && computerSelection === "Scissors") {
         var aRoundResultContainer2 = document.createElement('div');
@@ -78,7 +81,9 @@ function playRound() {
         yourSelecPara2.textContent = "You choose :" + " " + playerSelection;
         computerSelecPara2.textContent = "Computer selection is :" + " " + computerSelection;
         whoBeatsPara2.textContent = "You win! Rock beats Scissors"
+
         yourScore = yourScore + 1;
+        scoreShowcase.textContent = yourScore + "   " + "-" + "   " + computerScore;
     }
     else if (playerSelection === "Paper" && computerSelection === "Scissors") {
         var aRoundResultContainer3 = document.createElement('div');
@@ -94,7 +99,9 @@ function playRound() {
         yourSelecPara3.textContent = "You choose :" + " " + playerSelection;
         computerSelecPara3.textContent = "Computer selection is :" + " " + computerSelection;
         whoBeatsPara3.textContent = "You lost! Scissors beats Paper"
+
         computerScore = computerScore + 1;
+        scoreShowcase.textContent = yourScore + "   " + "-" + "   " + computerScore;
     }
     else if (playerSelection === "Paper" && computerSelection === "Rock") {
         var aRoundResultContainer4 = document.createElement('div');
@@ -110,7 +117,9 @@ function playRound() {
         yourSelecPara4.textContent = "You choose :" + " " + playerSelection;
         computerSelecPara4.textContent = "Computer selection is :" + " " + computerSelection;
         whoBeatsPara4.textContent = "You win! Paper beats Rock"
+
         yourScore = yourScore + 1;
+        scoreShowcase.textContent = yourScore + "   " + "-" + "   " + computerScore;
     }
     else if (playerSelection === "Scissors" && computerSelection === "Rock") {
         var aRoundResultContainer5 = document.createElement('div');
@@ -128,6 +137,7 @@ function playRound() {
         whoBeatsPara5.textContent = "You lost! Rock beats Scissors"
 
         computerScore = computerScore + 1;
+        scoreShowcase.textContent = yourScore + "   " + "-" + "   " + computerScore;
     }
     else if (playerSelection === "Scissors" && computerSelection === "Paper") {
         var aRoundResultContainer6 = document.createElement('div');
@@ -143,7 +153,9 @@ function playRound() {
         yourSelecPara6.textContent = "You choose :" + " " + playerSelection;
         computerSelecPara6.textContent = "Computer selection is :" + " " + computerSelection;
         whoBeatsPara6.textContent = "You win! Scissors beats Paper"
+
         yourScore = yourScore + 1;
+        scoreShowcase.textContent = yourScore + "   " + "-" + "   " + computerScore;
     }
     else if (playerSelection === "Rock" && computerSelection === "Rock") {
         var aRoundResultContainer7 = document.createElement('div');
@@ -159,6 +171,8 @@ function playRound() {
         yourSelecPara7.textContent = "You choose :" + " " + playerSelection;
         computerSelecPara7.textContent = "Computer selection is :" + " " + computerSelection;
         whoBeatsPara7.textContent = "It's a tie, no one gets score"
+
+        scoreShowcase.textContent = yourScore + "   " + "-" + "   " + computerScore;
     }
     else if (playerSelection === "Paper" && computerSelection === "Paper") {
         var aRoundResultContainer8 = document.createElement('div');
@@ -174,6 +188,8 @@ function playRound() {
         yourSelecPara8.textContent = "You choose :" + " " + playerSelection;
         computerSelecPara8.textContent = "Computer selection is :" + " " + computerSelection;
         whoBeatsPara8.textContent = "It's a tie, no one gets score"
+
+        scoreShowcase.textContent = yourScore + "   " + "-" + "   " + computerScore;
     }
     else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
         var aRoundResultContainer9 = document.createElement('div');
@@ -189,6 +205,8 @@ function playRound() {
         yourSelecPara9.textContent = "You choose :" + " " + playerSelection;
         computerSelecPara9.textContent = "Computer selection is :" + " " + computerSelection;
         whoBeatsPara9.textContent = "It's a tie, no one gets score"
+
+        scoreShowcase.textContent = yourScore + "   " + "-" + "   " + computerScore;
     }
 
 }
@@ -197,19 +215,15 @@ function game() {
     var gameOverResultShowcase = document.querySelector('#gameOverResult')
 
     if (computerScore == 5) {
-        var youLostPara = document.createElement('p')
-        youLostPara.textContent = "You lost the game, Computer wins low diff"
-        gameOverResultShowcase.appendChild(youLostPara);
-
+        var conclHeading = document.querySelector('#conclusion')
+        conclHeading.textContent = "You lost the game, Computer wins low diff 🗿 "
         threeButtons.forEach(function (button) {
             button.setAttribute("disabled", "");
         });
     }
     else if (yourScore == 5) {
-        var youWinPara = document.createElement('p')
-        youWinPara.textContent = "You win the game, CONGRATULATION high diff 🤙🏻"
-        gameOverResultShowcase.appendChild(youWinPara);
-
+        var conclHeading = document.querySelector('#conclusion')
+        conclHeading.textContent = "You win the game, CONGRATULATION high diff 🤙🏻"
         threeButtons.forEach(function (button) {
             button.setAttribute("disabled", "");
         });
@@ -223,8 +237,6 @@ function game() {
     var gameConclusion3 = document.createElement('p');
 
     gameConclusion.textContent = "Game Over";
-    gameConclusion2.textContent = "Your Score:" + " " + yourScore;
-    gameConclusion3.textContent = "Computer Score:" + " " + computerScore;
 
     gameOverResultShowcase.appendChild(gameConclusion);
     gameOverResultShowcase.appendChild(gameConclusion2);

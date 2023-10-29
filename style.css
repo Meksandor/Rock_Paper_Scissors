@@ -5,15 +5,27 @@
 #buttonsDiv {
     display: flex;
     justify-content: center;
+    gap: 10px;
 }
 
 #resultDiv {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column-reverse;
+
+    gap: 10px;
 }
 
 #gameOverResult {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#yourAndCompScoreTags {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
 }
