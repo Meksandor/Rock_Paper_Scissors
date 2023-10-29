@@ -17,7 +17,7 @@ function playRoundByButtonSelection(button) {
                 playerSelection = "Scissors";
                 break;
         }
-        console.log(playRound());
+        console.log(game());
     });
 }
 threeButtons.forEach(playRoundByButtonSelection);
@@ -95,33 +95,19 @@ function playRound() {
 
 function game() {
     if (yourScore !== 5 || computerScore !== 5) {
-        return;
+        return playRound();
     }
-    else if (yourScore < computerScore) {
+    else if (computerScore == 5) {
         console.log("You lost the game, Computer wins low diff");
 
     }
-    else if (computerScore < yourScore) {
+    else if (yourScore == 5) {
         console.log("You win the game, CONGRATULATION high diff 🤙🏻");
     }
-    else if (computerScore == yourScore) {
-        console.log("You both got the same score, DRAW 🫱🏻‍🫲🏾");
-    }
-
 
     console.log("Game Over");
     console.log("Your Score:" + " " + yourScore);
     console.log("Computer Score:" + " " + computerScore);
-
-    if (yourScore < computerScore) {
-        console.log("You lost the game, Computer wins low diff");
-    }
-    else if (computerScore < yourScore) {
-        console.log("You win the game, CONGRATULATION high diff 🤙🏻");
-    }
-    else if (computerScore == yourScore) {
-        console.log("You both got the same score, DRAW 🫱🏻‍🫲🏾");
-    }
 }
 
 
