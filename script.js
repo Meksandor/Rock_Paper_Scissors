@@ -96,9 +96,15 @@ function playRound() {
 function game() {
     if (computerScore == 5) {
         console.log("You lost the game, Computer wins low diff");
+        threeButtons.forEach(function (button) {
+            button.setAttribute("disabled", "");
+        });
     }
     else if (yourScore == 5) {
         console.log("You win the game, CONGRATULATION high diff 🤙🏻");
+        threeButtons.forEach(function (button) {
+            button.setAttribute("disabled", "");
+        });
     }
     else if (yourScore !== 5 || computerScore !== 5) {
         return playRound();
