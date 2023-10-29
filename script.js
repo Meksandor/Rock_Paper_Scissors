@@ -1,8 +1,37 @@
 var yourScore = 0;
 var computerScore = 0;
 var playerSelection = '';
-var threeButtons = document.querySelectorAll('.gameButton');
 
+var threeImgButtons = document.querySelectorAll('.imageButton')
+
+threeImgButtons.forEach(playRoundByButtonSelection);
+
+function playRoundByButtonSelection(imgButton) {
+    imgButton.addEventListener('click', function (event) {
+        var targetImgButton = event.target;
+        var gameOverHeading = document.querySelector('#gameOverHeading')
+        if (gameOverHeading == "") {
+            return;
+        }
+
+        else {
+            switch (targetImgButton.id) {
+                case 'rockImgButton':
+                    playerSelection = "Rock";
+                    break;
+                case 'paperImgButton':
+                    playerSelection = "Paper";
+                    break;
+                case 'scissorsImgButton':
+                    playerSelection = "Scissors";
+                    break;
+            }
+            console.log(game());
+        }
+    });
+}
+
+/*
 function playRoundByButtonSelection(button) {
     button.addEventListener('click', function (event) {
         var targetButton = event.target;
@@ -21,6 +50,7 @@ function playRoundByButtonSelection(button) {
     });
 }
 threeButtons.forEach(playRoundByButtonSelection);
+*/
 
 /*
 function capitalize(word) {
@@ -217,28 +247,21 @@ function game() {
     if (computerScore == 5) {
         var conclHeading = document.querySelector('#conclusion')
         conclHeading.textContent = "You lost the game, Computer wins low diff 🗿 "
-        threeButtons.forEach(function (button) {
-            button.setAttribute("disabled", "");
+        threeImgButtons.forEach(function (imgButton) {
+            imgButton.removeEventListener('click', playRoundByButtonSelection);
         });
     }
     else if (yourScore == 5) {
         var conclHeading = document.querySelector('#conclusion')
         conclHeading.textContent = "You win the game, CONGRATULATION high diff 🤙🏻"
-        threeButtons.forEach(function (button) {
-            button.setAttribute("disabled", "");
+        threeImgButtons.forEach(function (imgButton) {
+            imgButton.removeEventListener('click', playRoundByButtonSelection);
         });
     }
     else if (yourScore !== 5 || computerScore !== 5) {
         return playRound();
     }
 
-    var gameConclusion = document.createElement('p');
-    var gameConclusion2 = document.createElement('p');
-    var gameConclusion3 = document.createElement('p');
-
-    gameConclusion.textContent = "Game Over";
-
-    gameOverResultShowcase.appendChild(gameConclusion);
-    gameOverResultShowcase.appendChild(gameConclusion2);
-    gameOverResultShowcase.appendChild(gameConclusion3);
+    var gameOverHeading = document.querySelector('#gameOverHeading')
+    gameOverHeading.textContent = "Game Over";
 }
